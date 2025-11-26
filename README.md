@@ -20,6 +20,30 @@ Train a Linear Regression Model with Gradient Descent using the provided dataset
 
 ## Demo
 
+<div style="display: flex; justify-content: center; gap: 8px; text-align: center;">
+    <div>
+        <img 
+            src="https://github.com/Mecha-Coder/42-ft-linear-regression/blob/main/demo/Training.png"
+            width="250"
+        >
+        <p>Training Program</p>
+    </div>
+    <div>
+        <img 
+            src="https://github.com/Mecha-Coder/42-ft-linear-regression/blob/main/demo/Predict.png"
+            width="250"
+        >
+        <p>Predict Program</p>
+    </div>
+    <div>
+        <img 
+            src="https://github.com/Mecha-Coder/42-ft-linear-regression/blob/main/demo/Bonus.png"
+            width="250"
+        >
+        <p>Bonus Program</p>
+    </div>
+</div>
+
 <div align="center">
   <img src="https://github.com/Mecha-Coder/42-ft-linear-regression/blob/main/demo/Result.gif">
   <p>Training Results</p>
