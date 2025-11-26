@@ -15,7 +15,7 @@ Train a Linear Regression Model with Gradient Descent using the provided dataset
 
 👉 [**Project requirement**](https://github.com/Mecha-Coder/42-ft-linear-regression/blob/main/demo/Linear_Regression.pdf)
 
-👉 [**See my article on how to complete this project**](https://hackmd.io/@Mecha-Coder/BJ8itE4Wbx#3-Complete-Assignment)
+👉 [**See my article on how to complete this project**](https://hackmd.io/@Mecha-Coder/42-ft-linear-regression#3-Complete-Assignment)
 
 
 ## Demo
