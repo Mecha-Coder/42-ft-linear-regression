@@ -1,60 +1,65 @@
-![Title](/blob/main/demo/Title.png)
+![Title](https://github.com/Mecha-Coder/42-ft-linear-regression/blob/main/demo/Title.png)
 
-### **Overview**
+## **Overview**
 
 Train a Linear Regression Model with Gradient Descent using the provided dataset. Then, use that model to preduct the car price based on the mileage. 
 
----
-
-### **Key Learnings**
+## **Key Learnings**
 - Trained a linear regression model on a given dataset.
 - Applied gradient descent to optimize the model and achieve the best fit.
 - Normalized and denormalized data.
 - Evaluated model performance using Mean Squared Error (MSE) and the coefficient of determination (R²).
 
----
 
-### **Read More**
+## **Read More**
 
-👉 [**Project requirement**](/blob/main/demo/Linear_Regression.pdf)
+👉 [**Project requirement**](https://github.com/Mecha-Coder/42-ft-linear-regression/blob/main/demo/Linear_Regression.pdf)
 
-👉 [**Steps to complete the project**](https://hackmd.io/@Mecha-Coder/BJ8itE4Wbx#3-Complete-Assignment)
+👉 [**See my article on how to complete this project**](https://hackmd.io/@Mecha-Coder/BJ8itE4Wbx#3-Complete-Assignment)
 
---- 
 
-### Demo
+## Demo
 
-![demo](/blob/main/demo/Result.gif)
+<div align="center">
+  <img src="https://github.com/Mecha-Coder/42-ft-linear-regression/blob/main/demo/Result.gif">
+  <p>Training Results</p>
+</div>
 
----
 
-### **How to run**
+## **How to run**
 
-Pre-requisite: 
-- System: Linux distro / WSL
-- Python3 installed
+1. Pre-requisite:
+```bash 
+✅ System: Linux distro / WSL
+✅ Python3 installed
+```
 
-Clone repo:
+2. Clone repo:
 ```bash
 git clone https://github.com/Mecha-Coder/42-ft-linear-regression/
 cd 42-ft-linear-regression
 ```
 
-Run with make:
-1. `make install` - Create virtual environment and install depandencies (Will take time ⏳)
-2. `make train` - Train the model using Gradient Descent with below hyperparameters
+3. Run with make:
 ```bash
+1. `make install` - Create virtual env and install depandencies (Will take some time ⏳)
+2. `make train` - Train model using Gradient Descent with below hyperparameters
+3. `make bonus` - Plot graph and perform precision evaluation
+4. `make clean` - Reset to retrain with different hyperparameters
+```
+
+4. Hyperparameters used for traing
+```bash
+# Go to /src/header.py to change the hyperparameters
+# Ensure to run `make clean` to reset the training
 INIT_M = 0
 INIT_C = 0
 LEARN_RATE = 1
 CONVERGE_LIMIT = 0.00001
 ITERATION_LIMIT = 10000
 ```
-3. `make bonus` - Plot graph and perform precision evaluation
-4. `make clean` - To reset and train with different hyperparameters
----
 
-### **Resource**
+## **Resource**
 - https://www.aamoha.me/Linear-Regression
 - https://bhatnagar91.medium.com/how-neural-networks-learn-using-gradient-descent-f48c2e4079a6
 - https://hackmd.io/@laian/H1YEGw0qa
