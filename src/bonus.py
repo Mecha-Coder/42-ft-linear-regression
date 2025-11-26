@@ -67,7 +67,7 @@ def render(frame, left_plot, right_plot, left_info, right_info):
     right_plot.set_data(np.arange(frame), msc)
 
     left_info.set_text(f"Iter: {frame}\nm: {m:.5f}\nc: {c:.6}")
-    right_info.set_text(f"Iter: {frame}\nmsc: {current_msc:.5f}")
+    right_info.set_text(f"Iter: {frame}\nmsc: {current_msc:.1f}")
 
     return left_plot, left_info, right_plot, right_info
 
@@ -76,7 +76,18 @@ def plot_graph():
     ax[0].scatter(data["x"], data["y"], marker="x", label="Data")
 
     ax[1].set_xlim(0, data["size"])
-    ax[1].set_ylim(np.min(data["msc"]), np.max(data["msc"]))
+
+    # Round min/max to nearest 100,000
+    y_min = int(np.floor(np.min(data["msc"]) / 100_000) * 100_000)
+    y_max = int(np.ceil(np.max(data["msc"]) / 100_000) * 100_000)
+    ax[1].set_ylim(y_min, y_max)
+
+    # Set y-ticks every 100,000
+    ax[1].set_yticks(np.arange(y_min, y_max + 1, 100_000))
+
+    # Disable scientific notation
+    ax[1].yaxis.set_major_formatter(ScalarFormatter())
+    ax[1].ticklabel_format(style='plain', axis='y')
 
     left_plot, = ax[0].plot([], [], color="r", label="Learning Pattern")
     right_plot, = ax[1].plot([], [], color="g")
@@ -90,7 +101,7 @@ def plot_graph():
 
     ax[1].set_xlabel('Iteration')
     ax[1].set_ylabel('Mean Squared Error (MSE)')
-    ax[1].set_title('Cost Function')
+    ax[1].set_title(f'Lost Function (Learning Rate = {LEARN_RATE})')
 
     ani = FuncAnimation(
         fig, 

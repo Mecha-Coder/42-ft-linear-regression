@@ -80,12 +80,10 @@ def train_model():
         y_pred = x * m + c
         sumError_c = y_pred - y
         sumError_m = (y_pred - y) * x
-        squareError = (y_pred - y) ** 2
 
         # Compute the step size
         step_c = LEARN_RATE * (1/s) * np.sum(sumError_c)
         step_m = LEARN_RATE * (1/s) * np.sum(sumError_m)
-        mean_square_error = np.sum(squareError) / (2 * s)
 
         # Break loop if step is converging
         if (abs(step_c) < CONVERGE_LIMIT and abs(step_m) < CONVERGE_LIMIT):
@@ -98,11 +96,19 @@ def train_model():
         # De-normalize c and m values, used for graph plotting
         m_denorm = m * (y_range / x_range)
         c_denorm = (c * y_range) + np.min(data["y_actual"]) - (m_denorm * np.min(data["x_actual"]))
+        
+        # Find Mean Squared Error
+        y_pred_actual = m_denorm * data["x_actual"] + c_denorm
+        msc = np.sum((y_pred_actual - data["y_actual"])**2) / (2 * s) 
+
+        # Append into a list
         data["m"].append(m_denorm)
         data["c"].append(c_denorm)
-        data["msc"].append(mean_square_error)
+        data["msc"].append(msc)
+        
+        # Show progress
         show_progress(i + 1, c_denorm, m_denorm, True)
-        time.sleep(0.05)
+        time.sleep(0.01)
 
 def save_result():
 

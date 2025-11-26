@@ -5,6 +5,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+from matplotlib.ticker import ScalarFormatter
 import pandas as pd
 import json
 import sys
@@ -31,7 +32,7 @@ SAVE_RESULT = "./data/result.json"
 INIT_M = 0
 INIT_C = 0
 LEARN_RATE = 1
-CONVERGE_LIMIT = 0.00001
+CONVERGE_LIMIT = 0.0001
 ITERATION_LIMIT = 10000
 
 ERR_READ  = f"{RED}❌ Training stopped. Failed to import data.csv{RESET}"

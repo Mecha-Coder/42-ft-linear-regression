@@ -2,17 +2,17 @@ GREEN  := \033[32m
 RESET  := \033[0m
 
 # Python from virtual environment
-PYTHON = ./env/bin/python3
-PIP = ./env/bin/pip
+PYTHON = ./eval/bin/python3
+PIP = ./eval/bin/pip
 
 .PHONY: setup install train predict bonus clean
 
 setup:
-	@ python3 -m venv env
+	@ python3 -m venv eval
 	@ echo "$(GREEN)Virtual environment created$(RESET)"
 
 install: setup
-	@ $(PIP) install -r requirements.txt
+	@ $(PIP) install -r eval.txt
 	@ echo "$(GREEN)Necessary packages installed$(RESET)"
 
 train:
