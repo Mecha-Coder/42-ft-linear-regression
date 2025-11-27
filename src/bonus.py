@@ -37,10 +37,12 @@ def get_data():
 
 def show_progress(frame):
     global PRINT_STATUS
+    size = data["size"]
+
     if (PRINT_STATUS):
         print(f"\033[{1}A", end='')
     PRINT_STATUS = True
-    print(f"{YELLOW}1. Generating plot:{RESET} {int(frame / (data["size"] - 1) * 100)}%")
+    print(f"{YELLOW}1. Generating plot:{RESET} {int(frame / (size - 1) * 100)}%")
 
 def create_info_box(ax_object):
     return ax_object.text(
