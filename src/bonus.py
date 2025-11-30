@@ -103,7 +103,7 @@ def plot_graph():
 
     ax[1].set_xlabel('Iteration')
     ax[1].set_ylabel('Mean Squared Error (MSE)')
-    ax[1].set_title(f'Lost Function (Learning Rate = {LEARN_RATE})')
+    ax[1].set_title(f'Loss Function (Learning Rate = {LEARN_RATE})')
 
     ani = FuncAnimation(
         fig, 
